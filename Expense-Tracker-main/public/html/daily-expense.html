@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Expense</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+        <section class="container text-center">
+          <form id="expense">
+            <div>
+              <br>
+              <label for="amount">Choose Expense Amount:</label>
+              <input type="number" id="amount">
+            </div>
+            <div>
+              <br>
+              <label for="description">Choose description:</label>
+              <input type="text" id="description">
+            </div>
+            
+            <div>
+                <br>
+                <label for="category">Choose a category:</label>
+                <select name="category" id="category" none>
+                    <option disabled selected value> -- select an option -- </option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Health">Health</option>
+                    <option value="Grocery">Grocery</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Travel">Travel</option>
+                </select>
+            </div>
+            <br>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Add Expense">
+          </form>
+            
+        </section>
+        <br>
+        <div id="if-premium">
+          <button id="premium"> Buy Premium </button>
+          <button id="report-btn"> Expenses Report </button>
+          <button id="leaderboard-btn" hidden> Show Leaderboard </button>
+          <button id="report-dwn-btn" hidden> Download Report </button>
+        </div>
+        <div style='text-align:center' id="initial-tracker">
+            <h6>Expense Tracker</h6>
+            <ul id="tracker"></ul>
+            <div id="pagination"></div>
+        </div>
+        <div style="text-align:center" id="report-tracker" hidden>
+          <h6>Expense Report</h6>
+          <ul id="report-list"></ul>
+        </div>
+        <div style="text-align: center">
+          <form id="dynamic-pagination">
+            <label for="perpage">Expenses per page:</label>
+            <input type="number" id="perpage" name="perpage" min="5" max="100" step="5" value="5">
+            <input type="submit" value="Submit">
+            <br>
+          </form>
+        </div>
+        <div style="text-align:center" id="leaderboard-tracker" hidden> 
+          <br>
+          <h4>Leaderboard</h4>
+          <ul id="leaderboard-list"></ul>
+        </div>
+
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+        <script src="../js/daily-expense.js"></script>
+</body>
+</html>
